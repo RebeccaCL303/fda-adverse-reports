@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import TotalReports from "./Results/TotalReports";
+import SideEffects from "./Results/SideEffects";
 
 export default function Search() {
  let key = "6JlKzLqCMFly6SbLMcjq9ylzhrXC9Ltf29PqqPhe";
  let [query, setQuery] = useState("");
  let [totalReports, setTotalReports] = useState("");
+ let [sideEffects, setSideEffects] = useState("");
 
  function handleChange(event) {
   setQuery(event.target.value);
@@ -16,11 +18,18 @@ export default function Search() {
   event.preventDefault();
 
   let totalReportsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=(receivedate:[20040101+TO+20230919])+AND+${query}&count=receivedate`;
-  axios.get(totalReportsUrl).then(displayResults);
+  axios.get(totalReportsUrl).then(displayTotalReports);
+
+  let sideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=(receivedate:[20040101+TO+20230919])+AND+${query}&count=patient.reaction.reactionmeddrapt.exact&limit=10`;
+  axios.get(sideEffectsUrl).then(displaySideEffects);
  }
 
- function displayResults(response) {
+ function displayTotalReports(response) {
   setTotalReports(response.data.results.length);
+ }
+
+ function displaySideEffects(response) {
+  setSideEffects(response.data);
  }
 
  return (
@@ -30,6 +39,7 @@ export default function Search() {
     <input type="submit" value="Search" />
    </form>
    <TotalReports total={totalReports} />
+   <SideEffects sideEffectData={sideEffects} />
   </div>
  );
 }
