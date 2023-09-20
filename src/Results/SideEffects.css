@@ -1,0 +1,16 @@
+.SideEffects {
+ background-color: #272a2b;
+ padding: 10px;
+ max-width: 300px;
+ border-radius: 5px;
+ margin: 0px 30px;
+}
+
+li {
+ margin: 10px 0px;
+}
+
+ul {
+ list-style: none;
+ padding-left: 0px;
+}

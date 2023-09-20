@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./Search.css";
 
 import TotalReports from "./Results/TotalReports";
 import SideEffects from "./Results/SideEffects";

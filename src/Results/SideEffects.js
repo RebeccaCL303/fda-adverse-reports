@@ -1,16 +1,16 @@
 import React from "react";
+import "./SideEffects.css";
 
 export default function SideEffects(props) {
  if (props.sideEffectData) {
   return (
    <div className="SideEffects">
+    <h3>Adverse Reactions</h3>
     <ul>
      {props.sideEffectData.results.map(function (effect, index) {
       return (
        <li key={index}>
-        Complaint: {effect.term}
-        <br />
-        Frequency: {effect.count} complaints
+        <strong>{effect.term}</strong>: {effect.count} reports
        </li>
       );
      })}
