@@ -1,8 +1,8 @@
-form {
+.Search form {
  text-align: center;
 }
 
-input {
+.Search input {
  font-size: 20px;
  padding: 5px 15px;
  margin: 5px;
@@ -13,11 +13,11 @@ input {
  transition: 200ms all ease-in-out;
 }
 
-input:first-of-type {
+.Search input:first-of-type {
  width: 400px;
 }
 
-input:nth-of-type(2):hover {
+.Search input:nth-of-type(2):hover {
  cursor: pointer;
  color: red;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function TotalReports(props) {
- if (props.total) {
+ if (props.totalReportsData) {
   return (
    <div className="TotalReports">
     {" "}

@@ -11,6 +11,7 @@ export default function Search() {
  let [query, setQuery] = useState("");
  let [totalReports, setTotalReports] = useState("");
  let [sideEffects, setSideEffects] = useState("");
+ let [whoReported, setwhoReported] = useState("");
 
  function handleChange(event) {
   setQuery(event.target.value);
@@ -19,11 +20,14 @@ export default function Search() {
  function getResults(event) {
   event.preventDefault();
 
-  let totalReportsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=(receivedate:[20040101+TO+20230919])+AND+${query}&count=receivedate`;
+  let totalReportsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=(receivedate:[20040101+TO+20230920])+AND+${query}&count=receivedate`;
   axios.get(totalReportsUrl).then(displayTotalReports);
 
-  let sideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=(receivedate:[20040101+TO+20230919])+AND+${query}&count=patient.reaction.reactionmeddrapt.exact&limit=30`;
+  let sideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=(receivedate:[20040101+TO+20230920])+AND+${query}&count=patient.reaction.reactionmeddrapt.exact&limit=30`;
   axios.get(sideEffectsUrl).then(displaySideEffects);
+
+  let whoReportedUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=(receivedate:[20040101+TO+20230920])+AND+${query}&count=primarysource.qualification`;
+  axios.get(whoReportedUrl).then(displayWhoReported);
  }
 
  function displayTotalReports(response) {
@@ -34,15 +38,21 @@ export default function Search() {
   setSideEffects(response.data);
  }
 
+ function displayWhoReported(response) {
+  setwhoReported(response.data);
+ }
+
  return (
   <div className="Search">
    <form onSubmit={getResults}>
     <input type="text" onChange={handleChange} />
     <input type="submit" value="Search" />
    </form>
-   <TotalReports total={totalReports} />
-   <SideEffects sideEffectData={sideEffects} />
-   <WhoReported />
+   <TotalReports totalReportsData={totalReports} />
+   <main>
+    <SideEffects sideEffectData={sideEffects} />
+    <WhoReported whoReportedData={whoReported} />
+   </main>
   </div>
  );
 }

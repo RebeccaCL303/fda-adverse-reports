@@ -1,5 +1,14 @@
+.App {
+ padding: 50px;
+}
+
 .App h2 {
  text-align: center;
+}
+
+.App main {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
 }
 
 .App section {
