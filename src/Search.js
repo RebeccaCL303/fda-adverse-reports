@@ -4,6 +4,7 @@ import "./Search.css";
 
 import TotalReports from "./Results/TotalReports";
 import SideEffects from "./Results/SideEffects";
+import WhoReported from "./Results/WhoReported";
 
 export default function Search() {
  let key = "6JlKzLqCMFly6SbLMcjq9ylzhrXC9Ltf29PqqPhe";
@@ -41,6 +42,7 @@ export default function Search() {
    </form>
    <TotalReports total={totalReports} />
    <SideEffects sideEffectData={sideEffects} />
+   <WhoReported />
   </div>
  );
 }

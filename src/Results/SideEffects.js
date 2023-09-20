@@ -4,7 +4,7 @@ import "./SideEffects.css";
 export default function SideEffects(props) {
  if (props.sideEffectData) {
   return (
-   <div className="SideEffects">
+   <section className="SideEffects">
     <h3>Adverse Reactions</h3>
     <ul>
      {props.sideEffectData.results.map(function (effect, index) {
@@ -15,7 +15,7 @@ export default function SideEffects(props) {
       );
      })}
     </ul>
-   </div>
+   </section>
   );
  } else {
   return null;

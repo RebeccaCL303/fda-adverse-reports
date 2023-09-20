@@ -1,3 +1,11 @@
-h2 {
+.App h2 {
  text-align: center;
+}
+
+.App section {
+ background-color: #272a2b;
+ padding: 10px;
+ max-width: 300px;
+ border-radius: 5px;
+ margin: 0px 30px;
 }
