@@ -21,7 +21,7 @@ export default function Search() {
   let totalReportsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=(receivedate:[20040101+TO+20230919])+AND+${query}&count=receivedate`;
   axios.get(totalReportsUrl).then(displayTotalReports);
 
-  let sideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=(receivedate:[20040101+TO+20230919])+AND+${query}&count=patient.reaction.reactionmeddrapt.exact&limit=10`;
+  let sideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=(receivedate:[20040101+TO+20230919])+AND+${query}&count=patient.reaction.reactionmeddrapt.exact&limit=30`;
   axios.get(sideEffectsUrl).then(displaySideEffects);
  }
 
