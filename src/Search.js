@@ -45,9 +45,17 @@ export default function Search() {
  return (
   <div className="Search">
    <form onSubmit={getResults}>
-    <input type="text" onChange={handleChange} />
+    <input
+     id="drug-search"
+     type="text"
+     placeholder="Enter the name of a medication..."
+     onChange={handleChange}
+    />
     <input type="submit" value="Search" />
    </form>
+   <label htmlFor="drug-search">
+    i.e. levothyroxine, atorvastatin, venlafaxine
+   </label>
    <TotalReports totalReportsData={totalReports} />
    <main>
     <SideEffects sideEffectData={sideEffects} />
