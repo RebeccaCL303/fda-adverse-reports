@@ -1,10 +1,10 @@
 import "./App.css";
-import SearchHeader from "./SearchHeader.js";
+import Search from "./Search.js";
 
 function App() {
  return (
   <div className="App">
-   <SearchHeader />
+   <Search />
   </div>
  );
 }
