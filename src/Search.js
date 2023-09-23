@@ -4,6 +4,7 @@ import "./Search.css";
 
 import TotalReports from "./Results/TotalReports";
 import SideEffects from "./Results/SideEffects";
+import Demographics from "./Results/Demographics";
 import WhoReported from "./Results/WhoReported";
 
 export default function Search() {
@@ -11,6 +12,7 @@ export default function Search() {
  let [query, setQuery] = useState("");
  let [totalReports, setTotalReports] = useState("");
  let [sideEffects, setSideEffects] = useState("");
+ let [fSideEffects, setFSideEffects] = useState("");
  let [whoReported, setwhoReported] = useState("");
 
  function handleChange(event) {
@@ -20,14 +22,17 @@ export default function Search() {
  function getResults(event) {
   event.preventDefault();
 
-  let totalReportsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=(receivedate:[20040101+TO+20230920])+AND+${query}&count=receivedate`;
+  let totalReportsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=receivedate`;
   axios.get(totalReportsUrl).then(displayTotalReports);
 
-  let sideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=(receivedate:[20040101+TO+20230920])+AND+${query}&count=patient.reaction.reactionmeddrapt.exact&limit=30`;
+  let sideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=patient.reaction.reactionmeddrapt.exact&limit=30`;
   axios.get(sideEffectsUrl).then(displaySideEffects);
 
-  let whoReportedUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=(receivedate:[20040101+TO+20230920])+AND+${query}&count=primarysource.qualification`;
+  let whoReportedUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=primarysource.qualification`;
   axios.get(whoReportedUrl).then(displayWhoReported);
+
+  let fSideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=patient.patientsex:2+AND+${query}&count=patient.reaction.reactionmeddrapt.exact&limit=10`;
+  axios.get(fSideEffectsUrl).then(getfSideEffects);
  }
 
  function displayTotalReports(response) {
@@ -40,6 +45,11 @@ export default function Search() {
 
  function displayWhoReported(response) {
   setwhoReported(response.data);
+ }
+
+ function getfSideEffects(response) {
+  setFSideEffects(response.data);
+  console.log(response.data);
  }
 
  return (
@@ -59,6 +69,7 @@ export default function Search() {
    <TotalReports totalReportsData={totalReports} />
    <main>
     <SideEffects sideEffectData={sideEffects} />
+    <Demographics fSideEffectsData={fSideEffects} />
     <WhoReported whoReportedData={whoReported} />
    </main>
   </div>
