@@ -7,25 +7,41 @@
  max-width: 1000px;
 }
 
+.App .capitalize {
+ text-transform: capitalize;
+}
+
 .App h2 {
  margin-top: 50px;
+ font-size: 30px;
 }
 
 .App li {
  margin: 10px 0px;
 }
 
+.App li:first-letter {
+ text-transform: capitalize;
+}
+
+.App main {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+}
+
 .App section {
  background-color: #272a2b;
  margin-right: 30px;
- padding: 5px 10px;
- max-width: 300px;
+ padding: 10px 0;
+ max-width: 500px;
  border-radius: 5px;
 }
 
 .App ul {
- list-style: none;
- padding-left: 0px;
  max-height: 400px;
  overflow-y: auto;
+ list-style: none;
+ font-size: 20px;
+ padding-left: 0px;
+ text-transform: lowercase;
 }

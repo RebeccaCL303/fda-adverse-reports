@@ -5,7 +5,11 @@ export default function TotalReports(props) {
   return (
    <div className="TotalReports">
     {" "}
-    <h2>Total number of reports: {props.totalReportsData}</h2>
+    <h2>
+     <span className="capitalize">{props.query}</span>
+     <br />
+     <small>Total number of reports: {props.totalReportsData}</small>
+    </h2>
    </div>
   );
  } else {

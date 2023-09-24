@@ -4,7 +4,7 @@ export default function SideEffects(props) {
  if (props.sideEffectData) {
   return (
    <section className="SideEffects">
-    <h3>Adverse Reactions</h3>
+    <h2>Adverse Reactions</h2>
     <ul>
      {props.sideEffectData.results.map(function (effect, index) {
       return (
