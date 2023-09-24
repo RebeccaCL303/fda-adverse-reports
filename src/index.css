@@ -1,5 +1,6 @@
 body {
- background-color: #181a1b;
- color: white;
- font-family: "Ubuntu", sans-serif;
+ background-image: url("../images/pills-background.jpg");
+ padding: 40px 0;
+ background-size: cover;
+ background-repeat: no-repeat;
 }

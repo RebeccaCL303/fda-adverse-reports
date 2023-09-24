@@ -1,5 +1,4 @@
 import React from "react";
-import "./SideEffects.css";
 
 export default function SideEffects(props) {
  if (props.sideEffectData) {

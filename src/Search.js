@@ -4,7 +4,7 @@ import "./Search.css";
 
 import TotalReports from "./Results/TotalReports";
 import SideEffects from "./Results/SideEffects";
-import Demographics from "./Results/Demographics";
+import FSideEffects from "./Results/FSideEffects";
 import WhoReported from "./Results/WhoReported";
 
 export default function Search() {
@@ -13,6 +13,7 @@ export default function Search() {
  let [totalReports, setTotalReports] = useState("");
  let [sideEffects, setSideEffects] = useState("");
  let [fSideEffects, setFSideEffects] = useState("");
+ let [mSideEffects, setMSideEffects] = useState("");
  let [whoReported, setwhoReported] = useState("");
 
  function handleChange(event) {
@@ -32,7 +33,10 @@ export default function Search() {
   axios.get(whoReportedUrl).then(displayWhoReported);
 
   let fSideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=patient.patientsex:2+AND+${query}&count=patient.reaction.reactionmeddrapt.exact&limit=10`;
-  axios.get(fSideEffectsUrl).then(getfSideEffects);
+  axios.get(fSideEffectsUrl).then(getFSideEffects);
+
+  let mSideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=patient.patientsex:1+AND+${query}&count=patient.reaction.reactionmeddrapt.exact&limit=10`;
+  axios.get(mSideEffectsUrl).then(getMSideEffects);
  }
 
  function displayTotalReports(response) {
@@ -47,9 +51,12 @@ export default function Search() {
   setwhoReported(response.data);
  }
 
- function getfSideEffects(response) {
+ function getFSideEffects(response) {
   setFSideEffects(response.data);
-  console.log(response.data);
+ }
+
+ function getMSideEffects(response) {
+  setMSideEffects(response.data);
  }
 
  return (
@@ -69,7 +76,9 @@ export default function Search() {
    <TotalReports totalReportsData={totalReports} />
    <main>
     <SideEffects sideEffectData={sideEffects} />
-    <Demographics fSideEffectsData={fSideEffects} />
+    <section className="demographics">
+     <FSideEffects fSideEffectData={fSideEffects} />
+    </section>
     <WhoReported whoReportedData={whoReported} />
    </main>
   </div>

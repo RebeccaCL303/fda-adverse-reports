@@ -1,13 +1,12 @@
 import React from "react";
 
-export default function Demographics(props) {
- if (props.fSideEffectsData) {
+export default function FSideEffects(props) {
+ if (props.fSideEffectData) {
   return (
-   <section className="Demographics">
-    <h3>Demographics (via sex of patient)</h3>
+   <div className="FSideEffects">
     <h4>Most common reports for women:</h4>
     <ul>
-     {props.fSideEffectsData.results.map(function (effect, index) {
+     {props.fSideEffectData.results.map(function (effect, index) {
       return (
        <li key={index}>
         <strong>{effect.term}</strong>: {effect.count} reports
@@ -15,7 +14,7 @@ export default function Demographics(props) {
       );
      })}
     </ul>
-   </section>
+   </div>
   );
  } else {
   return null;

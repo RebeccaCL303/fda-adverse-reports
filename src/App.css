@@ -1,5 +1,10 @@
 .App {
  padding: 50px;
+ background-color: #272a2b;
+ color: white;
+ border-radius: 5px;
+ margin: auto;
+ max-width: 1000px;
 }
 
 .App h2 {
@@ -8,11 +13,6 @@
 
 .App li {
  margin: 10px 0px;
-}
-
-.App main {
- display: flex;
- justify-content: flex-start;
 }
 
 .App section {
@@ -27,4 +27,5 @@
  list-style: none;
  padding-left: 0px;
  max-height: 400px;
+ overflow-y: auto;
 }
