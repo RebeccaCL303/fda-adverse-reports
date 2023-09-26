@@ -8,7 +8,8 @@ import WhoReported from "./Results/WhoReported";
 
 export default function Search() {
  let key = "6JlKzLqCMFly6SbLMcjq9ylzhrXC9Ltf29PqqPhe";
- let [query, setQuery] = useState(null);
+ let [query, setQuery] = useState("");
+ let [drugName, setDrugName] = useState("");
  let [totalReports, setTotalReports] = useState("");
  let [sideEffects, setSideEffects] = useState("");
  let [whoReported, setwhoReported] = useState("");
@@ -19,6 +20,7 @@ export default function Search() {
 
  function getResults(event) {
   event.preventDefault();
+  setDrugName(query);
 
   let totalReportsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=receivedate`;
   axios.get(totalReportsUrl).then(displayTotalReports);
@@ -56,7 +58,7 @@ export default function Search() {
    <label htmlFor="drug-search">
     i.e. levothyroxine, atorvastatin, venlafaxine
    </label>
-   <TotalReports totalReportsData={totalReports} query={query} />
+   <TotalReports totalReportsData={totalReports} drugName={drugName} />
    <main>
     <SideEffects sideEffectData={sideEffects} />
     <WhoReported whoReportedData={whoReported} />
