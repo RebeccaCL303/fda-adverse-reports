@@ -5,6 +5,7 @@ import "./Search.css";
 import TotalReports from "./Results/TotalReports";
 import SideEffects from "./Results/SideEffects";
 import WhoReported from "./Results/WhoReported";
+import SEChart from "./Results/SEChart.js";
 
 export default function Search() {
  let key = "6JlKzLqCMFly6SbLMcjq9ylzhrXC9Ltf29PqqPhe";
@@ -61,6 +62,7 @@ export default function Search() {
    <TotalReports totalReportsData={totalReports} drugName={drugName} />
    <main>
     <SideEffects sideEffectData={sideEffects} />
+    <SEChart id="sideEffectChart" sideEffectData={sideEffects} />
     <WhoReported whoReportedData={whoReported} />
    </main>
   </div>
