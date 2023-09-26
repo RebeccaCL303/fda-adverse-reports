@@ -1,10 +1,7 @@
 import React from "react";
-import { Chart as ChartJS, BarElement } from "chart.js/auto";
-import { Bar } from "react-chartjs-2";
+import { Pie } from "react-chartjs-2";
 
-ChartJS.register(BarElement);
-
-const BarChart = () => {
+const PieChart = () => {
  const data = {
   labels: [1, 2, 3, 4, 5, 6, 7],
   datasets: [
@@ -35,10 +32,10 @@ const BarChart = () => {
  };
 
  return (
-  <div className="BarChart">
-   <Bar data={data} />
+  <div className="PieChart">
+   <Pie data={data} />
   </div>
  );
 };
 
-export default BarChart;
+export default PieChart;
