@@ -5,7 +5,7 @@ import "./Search.css";
 import TotalReports from "./Results/TotalReports";
 import SideEffects from "./Results/SideEffects";
 import WhoReported from "./Results/WhoReported";
-import SEChart from "./SEChart.js";
+import PieChart from "./PieChart";
 
 export default function Search() {
  let key = "6JlKzLqCMFly6SbLMcjq9ylzhrXC9Ltf29PqqPhe";
@@ -13,7 +13,8 @@ export default function Search() {
  let [drugName, setDrugName] = useState("");
  let [totalReports, setTotalReports] = useState("");
  let [sideEffects, setSideEffects] = useState("");
- let [whoReported, setwhoReported] = useState("");
+ let [chartData, setChartData] = useState("");
+ let [whoReported, setWhoReported] = useState("");
 
  function handleChange(event) {
   setQuery(event.target.value);
@@ -39,10 +40,33 @@ export default function Search() {
 
  function displaySideEffects(response) {
   setSideEffects(response.data);
+
+  setChartData([
+   {
+    term: response.data.results[0].term,
+    count: response.data.results[0].count,
+   },
+   {
+    term: response.data.results[1].term,
+    count: response.data.results[1].count,
+   },
+   {
+    term: response.data.results[2].term,
+    count: response.data.results[2].count,
+   },
+   {
+    term: response.data.results[3].term,
+    count: response.data.results[3].count,
+   },
+   {
+    term: response.data.results[4].term,
+    count: response.data.results[4].count,
+   },
+  ]);
  }
 
  function displayWhoReported(response) {
-  setwhoReported(response.data);
+  setWhoReported(response.data);
  }
 
  return (
@@ -62,9 +86,6 @@ export default function Search() {
    <TotalReports totalReportsData={totalReports} drugName={drugName} />
    <main>
     <SideEffects sideEffectData={sideEffects} />
-    <canvas id="sideEffectChart">
-     <SEChart sideEffectData={sideEffects} />
-    </canvas>
     <WhoReported whoReportedData={whoReported} />
    </main>
   </div>
