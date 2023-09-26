@@ -1,4 +1,4 @@
-import Chart from "chartjs";
+import Chart from "chart.js/auto";
 
 export default function SEChart(props) {
  if (props.sideEffectStats) {
@@ -25,17 +25,22 @@ export default function SEChart(props) {
    },
   ];
 
-  new Chart(document.getElementById("sideEffectChart"), {
-   type: "bar",
-   data: {
-    labels: sideEffectStats.map((row) => row.term),
-    datasets: [
-     {
-      label: "number of reports",
-      data: sideEffectStats.map((row) => row.count),
-     },
-    ],
-   },
-  });
+  return (
+   Chart(),
+   {
+    type: "bar",
+    data: {
+     labels: sideEffectStats.map((row) => row.term),
+     datasets: [
+      {
+       label: "number of reports",
+       data: sideEffectStats.map((row) => row.count),
+      },
+     ],
+    },
+   }
+  );
+ } else {
+  return null;
  }
 }
