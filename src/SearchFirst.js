@@ -5,6 +5,7 @@ import "./SearchFirst.css";
 import TotalReports from "./Results/TotalReports";
 import SideEffects from "./Results/SideEffects";
 import SideEffectChart from "./Charts/SideEffectsChart.js";
+import SearchSecond from "./SearchSecond.js";
 
 export default function Search() {
  let key = "6JlKzLqCMFly6SbLMcjq9ylzhrXC9Ltf29PqqPhe";
@@ -81,7 +82,7 @@ export default function Search() {
  }
 
  return (
-  <div className="Search">
+  <div className="SearchFirst">
    <form onSubmit={getResults}>
     <input
      id="drug-search"
@@ -100,6 +101,7 @@ export default function Search() {
      <SideEffects sideEffectData={sideEffects} />
      <SideEffectChart chartData={chartData} />
     </section>
+    <SearchSecond drugName={drugName} />
    </main>
   </div>
  );
