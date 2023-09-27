@@ -62,6 +62,26 @@ export default function Search() {
     term: response.data.results[4].term,
     count: response.data.results[4].count,
    },
+   {
+    term: response.data.results[5].term,
+    count: response.data.results[5].count,
+   },
+   {
+    term: response.data.results[6].term,
+    count: response.data.results[6].count,
+   },
+   {
+    term: response.data.results[7].term,
+    count: response.data.results[7].count,
+   },
+   {
+    term: response.data.results[8].term,
+    count: response.data.results[8].count,
+   },
+   {
+    term: response.data.results[9].term,
+    count: response.data.results[9].count,
+   },
   ]);
  }
 

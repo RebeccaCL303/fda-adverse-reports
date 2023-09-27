@@ -5,11 +5,11 @@ import { Pie } from "react-chartjs-2";
 export default function PieChart(props) {
  if (props.chartData) {
   const data = {
-   labels: [props.chartData[0].term, 2, 3, 4, 5, 6, 7],
+   labels: props.chartData.map((row) => row.term),
    datasets: [
     {
-     label: "My First Dataset",
-     data: [65, 59, 80, 81, 56, 55, 40],
+     label: "Reports",
+     data: props.chartData.map((row) => row.count),
      backgroundColor: [
       "rgba(255, 99, 132, 0.2)",
       "rgba(255, 159, 64, 0.2)",
