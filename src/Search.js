@@ -4,8 +4,8 @@ import "./Search.css";
 
 import TotalReports from "./Results/TotalReports";
 import SideEffects from "./Results/SideEffects";
+import PieChart from "./PieChart.js";
 import WhoReported from "./Results/WhoReported";
-import PieChart from "./PieChart";
 
 export default function Search() {
  let key = "6JlKzLqCMFly6SbLMcjq9ylzhrXC9Ltf29PqqPhe";
@@ -13,8 +13,8 @@ export default function Search() {
  let [drugName, setDrugName] = useState("");
  let [totalReports, setTotalReports] = useState("");
  let [sideEffects, setSideEffects] = useState("");
- let [chartData, setChartData] = useState("");
  let [whoReported, setWhoReported] = useState("");
+ let [chartData, setChartData] = useState(null);
 
  function handleChange(event) {
   setQuery(event.target.value);
@@ -86,6 +86,7 @@ export default function Search() {
    <TotalReports totalReportsData={totalReports} drugName={drugName} />
    <main>
     <SideEffects sideEffectData={sideEffects} />
+    <PieChart chartData={chartData} />
     <WhoReported whoReportedData={whoReported} />
    </main>
   </div>
