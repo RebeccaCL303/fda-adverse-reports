@@ -6,7 +6,7 @@ export default function TotalReports(props) {
    <div className="TotalReports">
     {" "}
     <h2>
-     <span className="capitalize">{props.query}</span>
+     <span className="capitalize">{props.drugName}</span>
      <br />
      <small>Total number of reports: {props.totalReportsData}</small>
     </h2>

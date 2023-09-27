@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Search.css";
+import "./SearchFirst.css";
 
 import TotalReports from "./Results/TotalReports";
 import SideEffects from "./Results/SideEffects";
-import PieChart from "./PieChart.js";
-import WhoReported from "./Results/WhoReported";
+import SideEffectChart from "./Charts/SideEffectsChart.js";
 
 export default function Search() {
  let key = "6JlKzLqCMFly6SbLMcjq9ylzhrXC9Ltf29PqqPhe";
@@ -13,7 +12,6 @@ export default function Search() {
  let [drugName, setDrugName] = useState("");
  let [totalReports, setTotalReports] = useState("");
  let [sideEffects, setSideEffects] = useState("");
- let [whoReported, setWhoReported] = useState("");
  let [chartData, setChartData] = useState(null);
 
  function handleChange(event) {
@@ -29,9 +27,6 @@ export default function Search() {
 
   let sideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=patient.reaction.reactionmeddrapt.exact&limit=30`;
   axios.get(sideEffectsUrl).then(displaySideEffects);
-
-  let whoReportedUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=primarysource.qualification`;
-  axios.get(whoReportedUrl).then(displayWhoReported);
  }
 
  function displayTotalReports(response) {
@@ -85,10 +80,6 @@ export default function Search() {
   ]);
  }
 
- function displayWhoReported(response) {
-  setWhoReported(response.data);
- }
-
  return (
   <div className="Search">
    <form onSubmit={getResults}>
@@ -105,9 +96,10 @@ export default function Search() {
    </label>
    <TotalReports totalReportsData={totalReports} drugName={drugName} />
    <main>
-    <SideEffects sideEffectData={sideEffects} />
-    <PieChart chartData={chartData} />
-    <WhoReported whoReportedData={whoReported} />
+    <section>
+     <SideEffects sideEffectData={sideEffects} />
+     <SideEffectChart chartData={chartData} />
+    </section>
    </main>
   </div>
  );
