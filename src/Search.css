@@ -1,4 +1,4 @@
-.SearchFirst input {
+.Search input {
  font-size: 20px;
  padding: 5px 15px;
  border: 2px solid white;
@@ -8,12 +8,12 @@
  transition: 200ms all ease-in-out;
 }
 
-.SearchFirst input:first-of-type {
+.Search input:first-of-type {
  width: 400px;
  margin-right: 5px;
 }
 
-.SearchFirst input:nth-of-type(2):hover {
+.Search input:nth-of-type(2):hover {
  cursor: pointer;
  color: red;
 }

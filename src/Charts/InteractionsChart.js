@@ -2,14 +2,14 @@ import React from "react";
 import "chart.js/auto";
 import { Pie } from "react-chartjs-2";
 
-export default function SideEffectsChart(props) {
- if (props.SEChartData) {
+export default function InteractionsChart(props) {
+ if (props.interactionsChartData) {
   const data = {
-   labels: props.SEChartData.map((row) => row.term),
+   labels: props.interactionsChartData.map((row) => row.term),
    datasets: [
     {
      label: "Reports",
-     data: props.SEChartData.map((row) => row.count),
+     data: props.interactionsChartData.map((row) => row.count),
      backgroundColor: [
       "rgba(255, 99, 132, 0.2)",
       "rgba(255, 159, 64, 0.2)",
@@ -33,7 +33,7 @@ export default function SideEffectsChart(props) {
    ],
   };
   return (
-   <div className="SideEffectsChart">
+   <div className="InteractionsChart">
     <Pie data={data} />
    </div>
   );
