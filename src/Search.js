@@ -4,19 +4,26 @@ import "./Search.css";
 
 import TotalReports from "./Results/TotalReports";
 import SideEffects from "./Results/SideEffects";
-import SideEffectsChart from "./Charts/SideEffectsChart.js";
 import Interactions from "./Results/Interactions.js";
+import WhoReported from "./Results/WhoReported";
+
+import SideEffectsChart from "./Charts/SideEffectsChart.js";
 import InteractionsChart from "./Charts/InteractionsChart.js";
+import WhoReportedChart from "./Charts/WhoReportedChart";
 
 export default function Search() {
  let key = "6JlKzLqCMFly6SbLMcjq9ylzhrXC9Ltf29PqqPhe";
  let [query, setQuery] = useState("");
  let [drugName, setDrugName] = useState("");
+
  let [totalReports, setTotalReports] = useState("");
  let [sideEffects, setSideEffects] = useState("");
- let [SEChartData, setSEChartData] = useState(null);
  let [interactions, setInteractions] = useState("");
+ let [whoReported, setWhoReported] = useState("");
+
+ let [SEChartData, setSEChartData] = useState("");
  let [interactionsChartData, setInteractionsChartData] = useState("");
+ let [WRChartData, setWRChartData] = useState("");
 
  function handleChange(event) {
   setQuery(event.target.value);
@@ -34,6 +41,9 @@ export default function Search() {
 
   let interactionUrl = `https://api.fda.gov/drug/label.json?api_key=${key}&search=drug_interactions:${query}&count=openfda.substance_name.exact&limit=20`;
   axios.get(interactionUrl).then(displayInteractions);
+
+  let whoReportedUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=primarysource.qualification`;
+  axios.get(whoReportedUrl).then(displayWhoReported);
  }
 
  function displayTotalReports(response) {
@@ -134,6 +144,33 @@ export default function Search() {
   ]);
  }
 
+ function displayWhoReported(response) {
+  setWhoReported(response.data);
+
+  setWRChartData([
+   {
+    term: response.data.results[0].term,
+    count: response.data.results[0].count,
+   },
+   {
+    term: response.data.results[1].term,
+    count: response.data.results[1].count,
+   },
+   {
+    term: response.data.results[2].term,
+    count: response.data.results[2].count,
+   },
+   {
+    term: response.data.results[3].term,
+    count: response.data.results[3].count,
+   },
+   {
+    term: response.data.results[4].term,
+    count: response.data.results[4].count,
+   },
+  ]);
+ }
+
  return (
   <div className="Search">
    <form onSubmit={getResults}>
@@ -149,14 +186,19 @@ export default function Search() {
     i.e. levothyroxine, atorvastatin, venlafaxine
    </label>
    <TotalReports totalReportsData={totalReports} drugName={drugName} />
-   <main>
-    <section>
-     <SideEffects sideEffectData={sideEffects} />
-     <SideEffectsChart SEChartData={SEChartData} />
-    </section>
+
+   <section>
+    <SideEffects sideEffectData={sideEffects} />
+    <SideEffectsChart SEChartData={SEChartData} />
+   </section>
+   <section>
     <InteractionsChart interactionsChartData={interactionsChartData} />
     <Interactions interactionsData={interactions} />
-   </main>
+   </section>
+   <section>
+    <WhoReported whoReportedData={whoReported} />
+    <WhoReportedChart WRChartData={WRChartData} />
+   </section>
   </div>
  );
 }

@@ -4,7 +4,7 @@
  color: white;
  border-radius: 5px;
  margin: auto;
- max-width: 1000px;
+ max-width: 1200px;
 }
 
 .App .capitalize {
@@ -12,7 +12,11 @@
 }
 
 .App h2 {
+ margin-top: 20px;
  font-size: 30px;
+}
+
+.App h2 ~ h2 {
  margin-top: 0;
 }
 
@@ -22,10 +26,6 @@
 
 .App li:first-letter {
  text-transform: capitalize;
-}
-
-.App main {
- max-width: 800px;
 }
 
 .App section {
@@ -39,7 +39,7 @@
 }
 
 .App ul {
- max-height: 400px;
+ max-height: 500px;
  overflow-y: auto;
  list-style: none;
  font-size: 20px;

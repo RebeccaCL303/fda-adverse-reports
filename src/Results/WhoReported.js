@@ -1,5 +1,4 @@
 import React from "react";
-import "./WhoReported.css";
 
 export default function WhoReported(props) {
  let reporterMap = {
@@ -12,7 +11,7 @@ export default function WhoReported(props) {
 
  if (props.whoReportedData) {
   return (
-   <section className="WhoReported">
+   <div className="WhoReported">
     <h2>Who Reported?</h2>
     <ul>
      {props.whoReportedData.results.map(function (reporter, index) {
@@ -24,7 +23,7 @@ export default function WhoReported(props) {
       );
      })}
     </ul>
-   </section>
+   </div>
   );
  } else {
   return null;
