@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Interactions.css";
+
 export default function Interactions(props) {
  if (props.interactionsData) {
   return (

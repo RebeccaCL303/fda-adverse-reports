@@ -8,7 +8,8 @@ function App() {
     This application is a coding project and is{" "}
     <em>not meant to replace the advice of any healthcare provider</em>. Please
     consult with a physician before making any changes to your mediction
-    regimen.
+    regimen. I am not in any way affiliated with the FDA, FAERS, or any part of
+    the US Government.
    </header>
    <main>
     <h1>FDA Adverse Event Reporting System (FAERS)</h1>

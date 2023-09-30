@@ -36,10 +36,10 @@ export default function Search() {
   let totalReportsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=receivedate`;
   axios.get(totalReportsUrl).then(displayTotalReports);
 
-  let sideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=patient.reaction.reactionmeddrapt.exact&limit=30`;
+  let sideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=patient.reaction.reactionmeddrapt.exact&limit=13`;
   axios.get(sideEffectsUrl).then(displaySideEffects);
 
-  let interactionUrl = `https://api.fda.gov/drug/label.json?api_key=${key}&search=drug_interactions:${query}&count=openfda.substance_name.exact&limit=20`;
+  let interactionUrl = `https://api.fda.gov/drug/label.json?api_key=${key}&search=drug_interactions:${query}&count=openfda.substance_name.exact&limit=13`;
   axios.get(interactionUrl).then(displayInteractions);
 
   let whoReportedUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=primarysource.qualification`;
@@ -173,6 +173,13 @@ export default function Search() {
 
  return (
   <div className="Search">
+   <p>
+    The FDA Adverse Event Reporting System (FAERS) is a database that contains
+    adverse event reports, medication error reports and product quality
+    complaints resulting in adverse events that were submitted to FDA. Enter the
+    name of a drug below (brand or generic) to find information such as reported
+    side effects and interactions.
+   </p>
    <form onSubmit={getResults}>
     <input
      id="drug-search"
