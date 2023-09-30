@@ -1,7 +1,13 @@
-.App {
- padding: 50px;
- background-color: #272a2b;
+.App header {
+ margin-bottom: 50px;
+ color: red;
+ text-align: center;
+}
+
+.App main {
  color: white;
+ padding: 50px 50px 0 50px;
+ background-color: #272a2b;
  border-radius: 5px;
  margin: auto;
  max-width: 1200px;
@@ -11,13 +17,23 @@
  text-transform: capitalize;
 }
 
+.App .disclaimer {
+ display: flex;
+ float: right;
+}
+
+.App footer {
+ margin: 150px 0 30px 0;
+ color: white;
+ background-color: #272a2b;
+ padding: 20px;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+}
+
 .App h2 {
  margin-top: 20px;
  font-size: 30px;
-}
-
-.App h2 ~ h2 {
- margin-top: 0;
 }
 
 .App li {
@@ -28,11 +44,10 @@
  text-transform: capitalize;
 }
 
-.App section {
+.App main section {
  display: grid;
  grid-template-columns: 1fr 1fr;
  justify-content: space-between;
- background-color: #272a2b;
  margin-top: 50px;
  padding: 10px 0;
  border-radius: 5px;
