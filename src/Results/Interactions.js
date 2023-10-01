@@ -6,7 +6,7 @@ export default function Interactions(props) {
  if (props.interactionsData) {
   return (
    <div className="Interactions">
-    <h2>Interactions</h2>
+    <h3>Interactions</h3>
     <ul>
      {props.interactionsData.results.map(function (interaction, index) {
       return (

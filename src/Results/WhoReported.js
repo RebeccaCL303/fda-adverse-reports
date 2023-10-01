@@ -12,7 +12,7 @@ export default function WhoReported(props) {
  if (props.whoReportedData) {
   return (
    <div className="WhoReported">
-    <h2>Who Reported?</h2>
+    <h3>Who Reported?</h3>
     <ul>
      {props.whoReportedData.results.map(function (reporter, index) {
       return (

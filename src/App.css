@@ -34,7 +34,14 @@
 
 .App h2 {
  margin-top: 20px;
+}
+
+.App :is(h2, h3, h4) {
  font-size: 30px;
+}
+
+.App h3 {
+ margin-top: 0;
 }
 
 .App li {
@@ -48,9 +55,10 @@
 .App main section {
  display: grid;
  grid-template-columns: 1fr 1fr;
- justify-content: space-between;
- margin-top: 50px;
- padding: 10px 0;
+ max-width: 1100px;
+ border: 1px solid white;
+ margin: 30px 0 auto;
+ padding: 10px;
  border-radius: 5px;
 }
 

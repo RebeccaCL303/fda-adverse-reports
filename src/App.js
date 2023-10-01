@@ -17,7 +17,7 @@ function App() {
    </main>
    <footer>
     <section>
-     <h3>Credit</h3>
+     <h4>Credit</h4>
      <p>
       This project is{" "}
       <a
@@ -37,7 +37,7 @@ function App() {
      </p>
     </section>
     <section>
-     <h3>Resources</h3>
+     <h4>Resources</h4>
      <p>
       <a href="https://www.fda.gov/" target="_blank" rel="noreferrer noopener">
        FDA Website
