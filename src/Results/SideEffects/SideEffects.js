@@ -9,7 +9,8 @@ export default function SideEffects(props) {
      {props.sideEffectData.results.map(function (effect, index) {
       return (
        <li key={index}>
-        <strong>{effect.term}</strong>: {effect.count} reports
+        <strong>{effect.term}</strong>:{" "}
+        <span className="opacity-less">{effect.count} reports</span>
        </li>
       );
      })}

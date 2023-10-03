@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./results.css";
+import "../results.css";
 
 export default function Interactions(props) {
  if (props.interactionsData) {
@@ -11,7 +11,8 @@ export default function Interactions(props) {
      {props.interactionsData.results.map(function (interaction, index) {
       return (
        <li key={index}>
-        <strong>{interaction.term}</strong>: {interaction.count} reports
+        <strong>{interaction.term}</strong>:{" "}
+        <span className="opacity-less">{interaction.count} reports</span>
        </li>
       );
      })}

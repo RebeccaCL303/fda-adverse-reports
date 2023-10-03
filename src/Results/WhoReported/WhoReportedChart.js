@@ -2,6 +2,8 @@ import React from "react";
 import "chart.js/auto";
 import { Pie } from "react-chartjs-2";
 
+import "../results.css";
+
 export default function WRChart(props) {
  if (props.WRChartData) {
   let reporterMap = {
@@ -36,7 +38,7 @@ export default function WRChart(props) {
    ],
   };
   return (
-   <div className="WRChart">
+   <div className="WhoReportedChart">
     <Pie data={data} />
    </div>
   );

@@ -1,3 +1,12 @@
+.SideEffects,
+.Interactions,
+.WhoReported,
+.SideEffectsChart,
+.InteractionsChart,
+.WhoReportedChart {
+ padding: 20px 0;
+}
+
 .Interactions {
  text-align: right;
 }

@@ -15,5 +15,5 @@
 
 .Search input:nth-of-type(2):hover {
  cursor: pointer;
- color: red;
+ color: #8e0413;
 }
