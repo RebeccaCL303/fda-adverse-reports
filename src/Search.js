@@ -3,13 +3,12 @@ import axios from "axios";
 import "./Search.css";
 
 import TotalReports from "./Results/TotalReports";
-import SideEffects from "./Results/SideEffects";
-import Interactions from "./Results/Interactions.js";
-import WhoReported from "./Results/WhoReported";
-
-import SideEffectsChart from "./Charts/SideEffectsChart.js";
-import InteractionsChart from "./Charts/InteractionsChart.js";
-import WhoReportedChart from "./Charts/WhoReportedChart";
+import SideEffects from "./Results/SideEffects/SideEffects";
+import SideEffectsChart from "./Results/SideEffects/SideEffectsChart.js";
+import Interactions from "./Results/Interactions/Interactions.js";
+import InteractionsChart from "./Results/Interactions/InteractionsChart.js";
+import WhoReported from "./Results/WhoReported/WhoReported";
+import WhoReportedChart from "./Results/WhoReported/WhoReportedChart";
 
 export default function Search() {
  let key = "6JlKzLqCMFly6SbLMcjq9ylzhrXC9Ltf29PqqPhe";
