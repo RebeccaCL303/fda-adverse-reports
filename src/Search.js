@@ -14,6 +14,7 @@ export default function Search() {
  let key = "6JlKzLqCMFly6SbLMcjq9ylzhrXC9Ltf29PqqPhe";
  let [query, setQuery] = useState("");
  let [drugName, setDrugName] = useState("");
+ let [tabs, setTabs] = useState("");
 
  let [totalReports, setTotalReports] = useState("");
  let [sideEffects, setSideEffects] = useState("");
@@ -43,6 +44,20 @@ export default function Search() {
 
   let whoReportedUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=primarysource.qualification`;
   axios.get(whoReportedUrl).then(displayWhoReported);
+
+  setTabs(
+   <div>
+    <button>Adverse Reactions</button>
+    <button onClick={interactionsActive}>Interactions</button>
+    <button>Who Reported?</button>
+   </div>
+  );
+ }
+
+ function interactionsActive() {
+  let interactionsElement = document.getElementById("interactions");
+  interactionsElement.classList.remove("inactive");
+  interactionsElement.classList.add("active");
  }
 
  function displayTotalReports(response) {
@@ -191,17 +206,19 @@ export default function Search() {
    <label htmlFor="drug-search">
     i.e. levothyroxine, atorvastatin, venlafaxine
    </label>
-   <TotalReports totalReportsData={totalReports} drugName={drugName} />
-
-   <section>
+   <div className="center-text">
+    <TotalReports totalReportsData={totalReports} drugName={drugName} />
+    {tabs}
+   </div>
+   <section className="side-effects active">
     <SideEffects sideEffectData={sideEffects} />
     <SideEffectsChart SEChartData={SEChartData} />
    </section>
-   <section>
-    <InteractionsChart interactionsChartData={interactionsChartData} />
+   <section className="inactive" id="interactions">
     <Interactions interactionsData={interactions} />
+    <InteractionsChart interactionsChartData={interactionsChartData} />
    </section>
-   <section>
+   <section className="who-reported inactive">
     <WhoReported whoReportedData={whoReported} />
     <WhoReportedChart WRChartData={WRChartData} />
    </section>

@@ -7,6 +7,31 @@
  max-width: 1200px;
 }
 
+.App .active {
+ display: grid;
+}
+
+.App .inactive {
+ display: none;
+}
+
+.App button {
+ margin: 10px;
+ font-size: 18px;
+ border-radius: 5px;
+ padding: 5px 10px;
+ transition: 200ms all ease-in-out;
+}
+
+.App button:hover {
+ cursor: pointer;
+ color: red;
+}
+
+.App .center-text {
+ text-align: center;
+}
+
 .App .capitalize {
  text-transform: capitalize;
 }
