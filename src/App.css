@@ -1,11 +1,14 @@
+:root {
+ --accent-1: #00a6fb;
+ --accent-2: #3f91ff;
+ --dark-accent: #03045e;
+}
+
 .App main {
- background-color: #272a2b;
  color: white;
  margin: auto;
  max-width: 1200px;
  padding: 50px;
- border-left: 1px solid white;
- border-right: 1px solid white;
 }
 
 .App .active {
@@ -17,27 +20,29 @@
 }
 
 .App a {
- text-decoration: none;
- color: red;
+ color: lightgrey;
  font-weight: 600;
  transition: 200ms all ease-in-out;
-}
-
-.App a:hover {
- color: white;
 }
 
 .App button {
  margin: 10px;
  font-size: 18px;
  border-radius: 5px;
- padding: 5px 10px;
+ padding: 10px;
  transition: 200ms all ease-in-out;
+ color: white;
+ background-color: rgb(51, 51, 51);
+}
+
+.App .btn-active {
+ font-weight: 700;
+ background-color: var(--dark-accent);
+ border: 1px solid white;
 }
 
 .App button:hover {
  cursor: pointer;
- color: red;
 }
 
 .App .center-text {
@@ -50,11 +55,11 @@
 
 .App footer {
  color: white;
- border-top: 1px solid;
- background-color: #272a2b;
- padding: 20px;
+ border-top: 1px solid white;
+ padding: 10px;
  display: grid;
  grid-template-columns: 1fr 1fr;
+ margin-top: 150px;
 }
 
 .App header {
@@ -62,7 +67,11 @@
  font-size: 18px;
  color: red;
  border-bottom: 1px solid white;
- background-color: #300030;
+}
+
+.App :is(header, footer) {
+ background-color: var(--dark-accent);
+ color: var(--accent-1);
 }
 
 .App hr {
@@ -92,6 +101,8 @@
 
 .App h4 {
  font-size: 20px;
+ margin: 5px 0;
+ color: white;
 }
 
 .App li {
@@ -115,6 +126,10 @@
 
 .App p {
  font-size: 18px;
+}
+
+.App strong {
+ font-weight: 600;
 }
 
 .App ul {

@@ -47,7 +47,9 @@ export default function Search() {
 
   setTabs(
    <div>
-    <button onClick={sideEffectsActive}>Adverse Reactions</button>
+    <button className="btn-active" onClick={sideEffectsActive}>
+     Adverse Reactions
+    </button>
     <button onClick={interactionsActive}>Interactions</button>
     <button onClick={whoReportedActive}>Who Reported?</button>
    </div>
