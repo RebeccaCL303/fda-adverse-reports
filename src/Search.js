@@ -47,17 +47,59 @@ export default function Search() {
 
   setTabs(
    <div>
-    <button>Adverse Reactions</button>
+    <button onClick={sideEffectsActive}>Adverse Reactions</button>
     <button onClick={interactionsActive}>Interactions</button>
-    <button>Who Reported?</button>
+    <button onClick={whoReportedActive}>Who Reported?</button>
    </div>
   );
  }
+ let interactionsElement = document.getElementById("interactions");
+ let sideEffectsElement = document.getElementById("side-effects");
+ let whoReportedElement = document.getElementById("who-reported");
 
  function interactionsActive() {
-  let interactionsElement = document.getElementById("interactions");
   interactionsElement.classList.remove("inactive");
   interactionsElement.classList.add("active");
+
+  if (sideEffectsElement.classList.contains("active")) {
+   sideEffectsElement.classList.remove("active");
+   sideEffectsElement.classList.add("inactive");
+  }
+
+  if (whoReportedElement.classList.contains("active")) {
+   whoReportedElement.classList.remove("active");
+   whoReportedElement.classList.add("inactive");
+  }
+ }
+
+ function sideEffectsActive() {
+  sideEffectsElement.classList.remove("inactive");
+  sideEffectsElement.classList.add("active");
+
+  if (interactionsElement.classList.contains("active")) {
+   interactionsElement.classList.remove("active");
+   interactionsElement.classList.add("inactive");
+  }
+
+  if (whoReportedElement.classList.contains("active")) {
+   whoReportedElement.classList.remove("active");
+   whoReportedElement.classList.add("inactive");
+  }
+ }
+
+ function whoReportedActive() {
+  whoReportedElement.classList.remove("inactive");
+  whoReportedElement.classList.add("active");
+
+  if (sideEffectsElement.classList.contains("active")) {
+   sideEffectsElement.classList.remove("active");
+   sideEffectsElement.classList.add("inactive");
+  }
+
+  if (interactionsElement.classList.contains("active")) {
+   interactionsElement.classList.remove("active");
+   interactionsElement.classList.add("inactive");
+  }
  }
 
  function displayTotalReports(response) {
@@ -210,7 +252,7 @@ export default function Search() {
     <TotalReports totalReportsData={totalReports} drugName={drugName} />
     {tabs}
    </div>
-   <section className="side-effects active">
+   <section className="active" id="side-effects">
     <SideEffects sideEffectData={sideEffects} />
     <SideEffectsChart SEChartData={SEChartData} />
    </section>
@@ -218,7 +260,7 @@ export default function Search() {
     <Interactions interactionsData={interactions} />
     <InteractionsChart interactionsChartData={interactionsChartData} />
    </section>
-   <section className="who-reported inactive">
+   <section className="inactive" id="who-reported">
     <WhoReported whoReportedData={whoReported} />
     <WhoReportedChart WRChartData={WRChartData} />
    </section>
