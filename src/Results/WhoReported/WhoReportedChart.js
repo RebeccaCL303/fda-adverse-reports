@@ -1,10 +1,11 @@
 import React from "react";
-import "chart.js/auto";
+import Chart from "chart.js/auto";
 import { Pie } from "react-chartjs-2";
 
 import "../results.css";
 
 export default function WRChart(props) {
+ Chart.defaults.color = "lightgrey";
  if (props.WRChartData) {
   let reporterMap = {
    1: "Physician",

@@ -1,8 +1,3 @@
-.SideEffects,
-.Interactions,
-.WhoReported,
-.SideEffectsChart,
-.InteractionsChart,
-.WhoReportedChart {
- padding: 20px 0;
+.TotalReports {
+ color: #82b7ff;
 }

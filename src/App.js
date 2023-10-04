@@ -12,7 +12,7 @@ function App() {
     the US Government.
    </header>
    <main>
-    <h1>FDA Adverse Event Reporting System (FAERS)</h1>
+    <h1>FDA Adverse Event Reporting System (FAERS) Database</h1>
     <Search />
    </main>
    <footer>

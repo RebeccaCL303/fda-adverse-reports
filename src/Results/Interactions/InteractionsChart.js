@@ -1,11 +1,12 @@
 import React from "react";
-import "chart.js/auto";
+import Chart from "chart.js/auto";
 import { Pie } from "react-chartjs-2";
 
 import "../results.css";
 
 export default function InteractionsChart(props) {
  if (props.interactionsChartData) {
+  Chart.defaults.color = "lightgrey";
   const data = {
    labels: props.interactionsChartData.map((row) => row.term),
    datasets: [

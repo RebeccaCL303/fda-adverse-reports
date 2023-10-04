@@ -1,10 +1,11 @@
 .App main {
- background-color: #1f2123;
+ background-color: #272a2b;
  color: white;
- padding: 50px 50px 0 50px;
- border-radius: 5px;
  margin: auto;
  max-width: 1200px;
+ padding: 50px;
+ border-left: 1px solid white;
+ border-right: 1px solid white;
 }
 
 .App .active {
@@ -13,6 +14,17 @@
 
 .App .inactive {
  display: none;
+}
+
+.App a {
+ text-decoration: none;
+ color: red;
+ font-weight: 600;
+ transition: 200ms all ease-in-out;
+}
+
+.App a:hover {
+ color: white;
 }
 
 .App button {
@@ -37,8 +49,8 @@
 }
 
 .App footer {
- margin: 150px 0 30px 0;
  color: white;
+ border-top: 1px solid;
  background-color: #272a2b;
  padding: 20px;
  display: grid;
@@ -46,15 +58,20 @@
 }
 
 .App header {
- margin-bottom: 50px;
  padding: 10px;
  font-size: 18px;
  color: red;
- background-color: #300000;
+ border-bottom: 1px solid white;
+ background-color: #300030;
+}
+
+.App hr {
+ margin-top: 40px;
 }
 
 .App h1 {
- font-size: 50px;
+ font-size: 40px;
+ font-weight: 600;
  margin-bottom: 5px;
 }
 
@@ -68,12 +85,13 @@
  font-weight: 400;
 }
 
-.App :is(h3, h4) {
+.App h3 {
+ margin-top: 0;
  font-size: 30px;
 }
 
-.App h3 {
- margin-top: 0;
+.App h4 {
+ font-size: 20px;
 }
 
 .App li {
@@ -88,6 +106,7 @@
  display: grid;
  grid-template-columns: 1fr 1fr;
  margin: 50px 0 auto;
+ padding: 20px 0;
 }
 
 .App .opacity-less {

@@ -248,6 +248,7 @@ export default function Search() {
    <label htmlFor="drug-search">
     i.e. levothyroxine, atorvastatin, venlafaxine
    </label>
+   <hr className="opacity-less" />
    <div className="center-text">
     <TotalReports totalReportsData={totalReports} drugName={drugName} />
     {tabs}
