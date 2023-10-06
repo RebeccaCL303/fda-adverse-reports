@@ -60,7 +60,6 @@
 .App header {
  padding: 10px;
  font-size: 18px;
- color: red;
  border-bottom: 1px solid white;
 }
 
@@ -134,4 +133,44 @@
  font-size: 20px;
  padding-left: 0px;
  text-transform: lowercase;
+}
+
+@media (max-width: 576px) {
+ .App main {
+  padding: 0 10px;
+ }
+
+ .App canvas {
+  max-width: 350px;
+  max-height: 350px;
+ }
+
+ .App button {
+  padding: 5px;
+  margin: 5px;
+ }
+
+ .App :is(footer, p, ul, button) {
+  font-size: 12px;
+ }
+
+ .App h1 {
+  font-size: 30px;
+ }
+
+ .App :is(h2, h2 small, h3, h4) {
+  font-size: 18px;
+ }
+
+ .App header {
+  font-size: 13px;
+ }
+
+ .App ul {
+  height: 300px;
+ }
+
+ .App .active {
+  display: block;
+ }
 }

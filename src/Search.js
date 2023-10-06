@@ -36,10 +36,10 @@ export default function Search() {
   let totalReportsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=receivedate`;
   axios.get(totalReportsUrl).then(displayTotalReports);
 
-  let sideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=patient.reaction.reactionmeddrapt.exact&limit=13`;
+  let sideEffectsUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=patient.reaction.reactionmeddrapt.exact&limit=30`;
   axios.get(sideEffectsUrl).then(displaySideEffects);
 
-  let interactionUrl = `https://api.fda.gov/drug/label.json?api_key=${key}&search=drug_interactions:${query}&count=openfda.substance_name.exact&limit=13`;
+  let interactionUrl = `https://api.fda.gov/drug/label.json?api_key=${key}&search=drug_interactions:${query}&count=openfda.substance_name.exact&limit=30`;
   axios.get(interactionUrl).then(displayInteractions);
 
   let whoReportedUrl = `https://api.fda.gov/drug/event.json?api_key=${key}&search=${query}&count=primarysource.qualification`;
@@ -232,16 +232,22 @@ export default function Search() {
    <p className="opacity-less">
     The FDA Adverse Event Reporting System (FAERS) is a database that contains
     adverse event reports, medication error reports and product quality
-    complaints resulting in adverse events that were submitted to FDA. Enter the
-    name of a drug or supplement below to find information such as reported side
-    effects and interactions.
+    complaints resulting in adverse events that were submitted to FDA.
+    <br />
+    <br />
+    Enter the name of a drug or supplement below to find information such as
+    reported side effects and interactions.
    </p>
    <form onSubmit={getResults}>
     <input
      id="drug-search"
      type="text"
-     placeholder="Enter the name of a medication..."
+     placeholder="Enter a medication name..."
      onChange={handleChange}
+     name
+     of
+     a
+     medication
     />
     <input type="submit" value="Search" />
    </form>

@@ -21,3 +21,17 @@
  cursor: pointer;
  border-color: var(--accent-2);
 }
+
+@media (max-width: 576px) {
+ .Search input {
+  font-size: 15px;
+ }
+
+ .Search input:first-of-type {
+  width: 200px;
+ }
+
+ .Search label {
+  font-size: 12px;
+ }
+}

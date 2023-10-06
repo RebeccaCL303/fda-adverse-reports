@@ -5,7 +5,7 @@ function App() {
  return (
   <div className="App">
    <header>
-    This application is a coding project and is{" "}
+    This application is{" "}
     <em>not meant to replace the advice of any healthcare provider</em>. Please
     consult with a physician before making any changes to your mediction
     regimen. I am not in any way affiliated with the FDA, FAERS, or any part of
