@@ -47,9 +47,7 @@ export default function Search() {
 
   setTabs(
    <div>
-    <button className="btn-active" onClick={sideEffectsActive}>
-     Adverse Reactions
-    </button>
+    <button onClick={sideEffectsActive}>Adverse Reactions</button>
     <button onClick={interactionsActive}>Interactions</button>
     <button onClick={whoReportedActive}>Who Reported?</button>
    </div>
@@ -235,8 +233,8 @@ export default function Search() {
     The FDA Adverse Event Reporting System (FAERS) is a database that contains
     adverse event reports, medication error reports and product quality
     complaints resulting in adverse events that were submitted to FDA. Enter the
-    name of a drug below (brand or generic) to find information such as reported
-    side effects and interactions.
+    name of a drug or supplement below to find information such as reported side
+    effects and interactions.
    </p>
    <form onSubmit={getResults}>
     <input
@@ -248,7 +246,25 @@ export default function Search() {
     <input type="submit" value="Search" />
    </form>
    <label htmlFor="drug-search">
-    i.e. levothyroxine, atorvastatin, venlafaxine
+    <strong>Tips:</strong> If a brand name medication doesn't return any
+    results, try typing the generic name instead.
+    <br />
+    If you don't know the generic name, find it{" "}
+    <a
+     href="https://www.drugs.com/drug_information.html"
+     target="_blank"
+     rel="noreferrer noopener">
+     here
+    </a>
+    .
+    <br />
+    <strong>Example:</strong> try typing "montelukast" instead of "singulair"
+    <br />
+    <br />
+    Recently FDA-approved medications may cause an error, or may return
+    significantly less data
+    <br />
+    as they haven't been available very long.
    </label>
    <hr className="opacity-less" />
    <div className="center-text">

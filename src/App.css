@@ -35,14 +35,9 @@
  background-color: rgb(51, 51, 51);
 }
 
-.App .btn-active {
- font-weight: 700;
- background-color: var(--dark-accent);
- border: 1px solid white;
-}
-
 .App button:hover {
  cursor: pointer;
+ background-color: var(--dark-accent);
 }
 
 .App .center-text {
