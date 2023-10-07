@@ -148,12 +148,12 @@
  }
 
  .App .btn {
-  padding: 5px;
+  padding: 8px;
   margin: 5px;
  }
 
  .App :is(footer, p, ul, .btn) {
-  font-size: 12px;
+  font-size: 13px;
  }
 
  .App h1 {

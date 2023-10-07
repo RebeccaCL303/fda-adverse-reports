@@ -26,6 +26,7 @@
 
  .Search input:first-of-type {
   width: 200px;
+  padding: 8px;
  }
 
  .Search label {
