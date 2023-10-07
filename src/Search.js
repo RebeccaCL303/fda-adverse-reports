@@ -47,9 +47,15 @@ export default function Search() {
 
   setTabs(
    <div>
-    <button onClick={sideEffectsActive}>Adverse Reactions</button>
-    <button onClick={interactionsActive}>Interactions</button>
-    <button onClick={whoReportedActive}>Who Reported?</button>
+    <button className="btn" onClick={sideEffectsActive}>
+     Adverse Reactions
+    </button>
+    <button className="btn" onClick={interactionsActive}>
+     Interactions
+    </button>
+    <button className="btn" onClick={whoReportedActive}>
+     Who Reported?
+    </button>
    </div>
   );
  }
@@ -244,12 +250,8 @@ export default function Search() {
      type="text"
      placeholder="Enter a medication name..."
      onChange={handleChange}
-     name
-     of
-     a
-     medication
     />
-    <input type="submit" value="Search" />
+    <input className="btn" type="submit" value="Search" />
    </form>
    <label htmlFor="drug-search">
     <strong>Tips:</strong> If a brand name medication doesn't return any
@@ -268,9 +270,9 @@ export default function Search() {
     <br />
     <br />
     Recently FDA-approved medications may cause an error, or may return
-    significantly less data
-    <br />
-    as they haven't been available very long.
+    significantly less data. <br />
+    as they haven't been available very long. <br />
+    <strong>If you receive an error, restart the page.</strong>
    </label>
    <hr className="opacity-less" />
    <div className="center-text">

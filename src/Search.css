@@ -1,6 +1,6 @@
 .Search input {
  font-size: 20px;
- padding: 5px 15px;
+ padding: 10px 15px;
  border: 1px solid #b7b5b4;
  border-radius: 5px;
  background-color: black;
@@ -13,13 +13,10 @@
  margin-right: 5px;
 }
 
-.Search input:nth-of-type(2) {
- color: var(--accent-2);
-}
-
-.Search input:nth-of-type(2):hover {
- cursor: pointer;
- border-color: var(--accent-2);
+@media (max-width: 950px) {
+ .Search input:first-of-type {
+  max-width: 400px;
+ }
 }
 
 @media (max-width: 576px) {
