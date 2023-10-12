@@ -1,3 +1,9 @@
+.Search {
+ position: relative;
+ top: 50px;
+ min-height: 700px;
+}
+
 .Search #drug-search {
  border: 1px solid #b7b5b4;
  font-size: 20px;

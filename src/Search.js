@@ -235,7 +235,7 @@ export default function Search() {
 
  return (
   <div className="Search">
-   <h2>Search the FAERS Databse</h2>
+   <h2>Search the FAERS Database</h2>
    <div className="label-wrap">
     <label htmlFor="drug-search">
      Enter the name of a medication or supplement below to find data such as
