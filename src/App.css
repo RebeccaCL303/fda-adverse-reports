@@ -4,9 +4,8 @@
 }
 
 .App main {
- color: white;
  margin: auto;
- max-width: 1200px;
+ max-width: 1400px;
  padding: 50px;
 }
 
@@ -28,7 +27,7 @@
  margin: 10px;
  font-size: 18px;
  border-radius: 5px;
- border: 1px inset lightgrey;
+ border: 1px outset lightgrey;
  padding: 10px;
  transition: 200ms all ease-in-out;
  color: white;
@@ -38,7 +37,7 @@
 .App .btn:hover {
  cursor: pointer;
  background-color: var(--dark-accent);
- border-style: outset;
+ border-style: intset;
 }
 
 .App .center-text {
@@ -68,7 +67,7 @@
 
 .App :is(header, footer) {
  background-color: var(--dark-accent);
- max-width: 1500px;
+ max-width: 1600px;
 }
 
 .App hr {
@@ -160,6 +159,7 @@
 
  .App h1 {
   font-size: 30px;
+  margin-left: 20px;
  }
 
  .App :is(h2, h2 small, h3, h4) {

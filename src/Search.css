@@ -1,32 +1,29 @@
-.Search input {
- font-size: 20px;
- padding: 10px 15px;
+.Search #drug-search {
  border: 1px solid #b7b5b4;
- border-radius: 5px;
+ font-size: 20px;
  background-color: black;
- transition: 200ms all ease-in-out;
-}
-
-.Search input:first-of-type {
- width: 600px;
+ padding: 10px 15px;
+ border-radius: 5px;
+ width: 800px;
  color: white;
  margin-right: 5px;
 }
 
 @media (max-width: 950px) {
- .Search input:first-of-type {
+ .Search #drug-search {
   max-width: 400px;
+  font-size: 18px;
  }
 }
 
 @media (max-width: 576px) {
- .Search input {
+ .Search input::placeholder {
   font-size: 15px;
  }
 
- .Search input:first-of-type {
+ .Search #drug-search {
   width: 200px;
-  padding: 8px;
+  padding: 5px;
  }
 
  .Search label {

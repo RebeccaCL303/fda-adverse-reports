@@ -235,15 +235,13 @@ export default function Search() {
 
  return (
   <div className="Search">
-   <p className="opacity-less">
-    The FDA Adverse Event Reporting System (FAERS) is a database that contains
-    adverse event reports, medication error reports and product quality
-    complaints resulting in adverse events that were submitted to FDA.
-    <br />
-    <br />
-    Enter the name of a drug or supplement below to find information such as
-    reported side effects and interactions.
-   </p>
+   <h2>Search the FAERS Databse</h2>
+   <div className="label-wrap">
+    <label htmlFor="drug-search">
+     Enter the name of a medication or supplement below to find data such as
+     reported side effects, interactions...etc
+    </label>
+   </div>
    <form onSubmit={getResults}>
     <input
      id="drug-search"
