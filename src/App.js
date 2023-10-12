@@ -5,14 +5,9 @@ function App() {
  return (
   <div className="App">
    <header>
-    This application is{" "}
-    <em>not meant to replace the advice of any healthcare provider</em>. Please
-    consult with a physician before making any changes to your mediction
-    regimen. I am not in any way affiliated with the FDA, FAERS, or any part of
-    the US Government.
+    <h1>FAERS</h1>
    </header>
    <main>
-    <h1>FDA Adverse Event Reporting System (FAERS) Database</h1>
     <Search />
    </main>
    <footer>
@@ -58,6 +53,16 @@ function App() {
        rel="noreferrer noopener">
        FAERS Public Dashboard
       </a>
+     </p>
+    </section>
+    <section>
+     <h4>Disclaimer</h4>
+     <p>
+      This application is{" "}
+      <em>not meant to replace the advice of any healthcare provider</em>.
+      Please consult with a physician before making any changes to your
+      mediction regimen. I am not in any way affiliated with the FDA, FAERS, or
+      any part of the US Government.
      </p>
     </section>
    </footer>

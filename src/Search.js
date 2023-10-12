@@ -253,7 +253,8 @@ export default function Search() {
     />
     <input className="btn" type="submit" value="Search" />
    </form>
-   <label htmlFor="drug-search">
+   <p>
+    {" "}
     <strong>Tips:</strong> If a brand name medication doesn't return any
     results, try typing the generic name instead.
     <br />
@@ -273,7 +274,7 @@ export default function Search() {
     significantly less data. <br />
     as they haven't been available very long. <br />
     <strong>If you receive an error, restart the page.</strong>
-   </label>
+   </p>
    <hr className="opacity-less" />
    <div className="center-text">
     <TotalReports totalReportsData={totalReports} drugName={drugName} />

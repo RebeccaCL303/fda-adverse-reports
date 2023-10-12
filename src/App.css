@@ -1,6 +1,6 @@
 :root {
  --light-accent: #4fc4fe;
- --dark-accent: #00014b;
+ --dark-accent: #001163;
 }
 
 .App main {
@@ -51,23 +51,24 @@
 
 .App footer {
  color: white;
- border-top: 1px solid darkgray;
  padding: 10px;
  display: grid;
- grid-template-columns: 1fr 1fr;
+ grid-template-columns: repeat(3, 1fr);
  margin-top: 150px;
 }
 
+.App footer section {
+ margin: 20px;
+}
+
 .App header {
- padding: 10px;
- font-size: 18px;
- border-bottom: 1px solid darkgray;
  margin: 0;
+ font-family: "Open Sans", sans-serif;
 }
 
 .App :is(header, footer) {
  background-color: var(--dark-accent);
- color: var(--light-accent);
+ max-width: 1500px;
 }
 
 .App hr {
@@ -75,9 +76,10 @@
 }
 
 .App h1 {
- font-size: 40px;
- font-weight: 600;
- margin-bottom: 5px;
+ font-size: 30px;
+ font-weight: 500;
+ margin-left: 40px;
+ padding: 8px 0;
 }
 
 .App h2 {
