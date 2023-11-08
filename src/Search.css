@@ -28,6 +28,15 @@
  padding: 10px 15px;
 }
 
+.Search p:first-of-type {
+ margin: 3rem auto;
+ top: 3rem;
+ width: 80vw;
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ column-width: 2rem;
+}
+
 @media (max-width: 950px) {
  .Search #drug-search {
   width: 80vw;

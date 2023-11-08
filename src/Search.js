@@ -250,26 +250,27 @@ export default function Search() {
     reported side effects, interactions...etc
    </label>
    <p>
-    {" "}
-    <strong>Tips:</strong> If a brand name medication doesn't return any
-    results, try typing the generic name instead.
-    <br />
-    If you don't know the generic name, find it{" "}
-    <a
-     href="https://www.drugs.com/drug_information.html"
-     target="_blank"
-     rel="noreferrer noopener">
-     here
-    </a>
-    .
-    <br />
-    <strong>Example:</strong> try typing "montelukast" instead of "singulair"
-    <br />
-    <br />
-    Recently FDA-approved medications may cause an error, or may return
-    significantly less data. <br />
-    as they haven't been available very long. <br />
-    <strong>If you receive an error, restart the page.</strong>
+    <span>
+     If a brand name medication doesn't return any results, try typing the
+     generic name instead.
+     <br />
+     If you don't know the generic name, find it{" "}
+     <a
+      href="https://www.drugs.com/drug_information.html"
+      target="_blank"
+      rel="noreferrer noopener">
+      here
+     </a>
+     .
+     <br />
+     <strong>Example:</strong> try typing "montelukast" instead of "singulair"
+    </span>
+    <span>
+     Recently FDA-approved medications may cause an error, or may return
+     significantly less data. <br />
+     as they haven't been available very long. <br />
+     <strong>If you receive an error, restart the page.</strong>
+    </span>
    </p>
    <hr className="opacity-less" />
    <div className="center-text">
