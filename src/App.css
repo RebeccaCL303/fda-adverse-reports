@@ -53,6 +53,7 @@
  padding: 10px;
  display: grid;
  grid-template-columns: repeat(3, 1fr);
+ margin-top: 5rem;
 }
 
 .App footer section {
@@ -151,6 +152,7 @@
  .App canvas {
   max-width: 350px;
   max-height: 350px;
+  margin: 40px auto;
  }
 
  .App .btn {
@@ -181,5 +183,11 @@
 
  .App .active {
   display: block;
+ }
+
+ .App footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
  }
 }

@@ -10,7 +10,7 @@
  background-color: black;
  padding: 10px 15px;
  border-radius: 5px;
- width: 800px;
+ width: 60vw;
  color: white;
  margin-right: 5px;
 }
@@ -28,7 +28,6 @@
  }
 
  .Search #drug-search {
-  width: 200px;
   padding: 5px;
  }
 
