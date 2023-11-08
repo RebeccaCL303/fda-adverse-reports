@@ -236,12 +236,6 @@ export default function Search() {
  return (
   <div className="Search">
    <h2>Search the FAERS Database</h2>
-   <div className="label-wrap">
-    <label htmlFor="drug-search">
-     Enter the name of a medication or supplement below to find data such as
-     reported side effects, interactions...etc
-    </label>
-   </div>
    <form onSubmit={getResults}>
     <input
      id="drug-search"
@@ -251,6 +245,10 @@ export default function Search() {
     />
     <input className="btn" type="submit" value="Search" />
    </form>
+   <label htmlFor="drug-search">
+    Enter the name of a medication or supplement below to find data such as
+    reported side effects, interactions...etc
+   </label>
    <p>
     {" "}
     <strong>Tips:</strong> If a brand name medication doesn't return any
