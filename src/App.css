@@ -48,6 +48,12 @@
  text-transform: capitalize;
 }
 
+.App canvas {
+ max-width: 40vw;
+ max-height: 40vw;
+ margin-bottom: 5rem;
+}
+
 .App footer {
  color: white;
  padding: 10px;
